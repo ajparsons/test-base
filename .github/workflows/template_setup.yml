@@ -52,7 +52,7 @@ jobs:
         run: |
           export REPO_NAME=$(echo $INFO | jq -r '.repository.name')
           pushd /tmp
-          cookiecutter --no-input \
+          cookiecutter $GITHUB_WORKSPACE --no-input \
             lib_name=$REPO_NAME \
             description="$(echo $INFO | jq -r .repository.description)" \
             github_username="$(echo $INFO | jq -r .repository.owner.login)" \
