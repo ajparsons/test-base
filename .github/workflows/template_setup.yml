@@ -61,6 +61,7 @@ jobs:
             github_id=$GITHUB_REPOSITORY
           popd
           rm -r ./*
+          rm -r ./.[!.]* 
           mv /tmp/$REPO_NAME/* .
           mv /tmp/$REPO_NAME/.[!.]* .
 
